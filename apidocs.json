@@ -49,7 +49,7 @@
     },
     "/api/movies/detail?id=": {
       "get": {
-        "tags": ["Detail Movies"],
+        "tags": ["Detail Movie"],
         "summary": "Detail Movie",
         "description": "",
         "produces": [
