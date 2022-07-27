@@ -1,3 +1,3 @@
 # imdb-trawlbens
 INSTALL DEPENDENCIES:
-	npm -i express nodemon request
+	npm i express nodemon request redis swagger-ui-express
