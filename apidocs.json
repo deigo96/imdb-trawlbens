@@ -1,0 +1,76 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "IMDB Trawlbens",
+    "description": "Tes Kerja",
+    "version": "1.0.0"
+  },
+  "_servers": [
+    {
+      "url": "http://localhost:9000",
+      "description": "localhost"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Movies",
+      "description": "Movies"
+    },
+    {
+      "name": "Detail Movie",
+      "description": "Detail Movie"
+    }
+  ],
+  "paths": {
+    "/api/movies?title=": {
+      "get": {
+        "tags": ["Movies"],
+        "summary": "Pencarian Judul Movie",
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters":[
+          {
+            "in": "query",
+            "name": "title",
+            "schema":{
+              "type": "string"
+            },
+            "description": "Judul Film"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sukses"
+          }
+        }
+      }
+    },
+    "/api/movies/detail?id=": {
+      "get": {
+        "tags": ["Detail Movies"],
+        "summary": "Detail Movie",
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters":[
+          {
+            "in": "query",
+            "name": "id",
+            "schema":{
+              "type": "string"
+            },
+            "description": "Id Movie"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sukses"
+          }
+        }
+      }
+    }
+  }
+}
