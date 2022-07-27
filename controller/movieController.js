@@ -3,8 +3,15 @@ const redis = require("redis");
 
 const client = redis.createClient();
 
-const movie = async (req, res) => {
+const movie = async (req, res, next) => {
   const title = req.query.title;
+  if(!title) {
+    res.status(400).send({
+      status: 400,
+      message: "Masukan judul film"
+    })
+    return
+  }
   await client.connect();
 
   const dataTitle = await client.get(title);
@@ -54,6 +61,13 @@ const movie = async (req, res) => {
 
 const detail = async (req, res) => {
   const id = req.query.id;
+  if(!id){
+    res.status(400).send({
+      status: 400,
+      message: "Masukan id film"
+    })
+    return
+  }
   await client.connect();
 
   const dataRedis = await client.get(id);
@@ -99,6 +113,7 @@ const detail = async (req, res) => {
       }
     });
   }
+
 };
 
 module.exports = { movie, detail };
