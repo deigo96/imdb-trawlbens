@@ -50,6 +50,7 @@ const movie = async (req, res) => {
       }
     });
   }
+  client.quit();
 };
 
 const detail = async (req, res) => {
@@ -99,6 +100,8 @@ const detail = async (req, res) => {
       }
     });
   }
+  client.quit();
+
 };
 
 module.exports = { movie, detail };
