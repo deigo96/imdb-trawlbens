@@ -114,10 +114,6 @@ const detail = async (req, res) => {
       }
     });
   }
-<<<<<<< HEAD
-=======
-  client.quit();
->>>>>>> eb8baf50576ff3db9d43053682889b78a3df27b2
 
 };
 
