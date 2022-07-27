@@ -57,7 +57,6 @@ const movie = async (req, res, next) => {
       }
     });
   }
-  client.quit();
 };
 
 const detail = async (req, res) => {
