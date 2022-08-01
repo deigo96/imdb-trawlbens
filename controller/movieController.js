@@ -44,7 +44,8 @@ const movie = async (req, res, next) => {
             status: 200,
             message: "Judul film tidak ditemukan",
           });
-          return;
+        client.quit();
+        return;
         }
         client.setEx(title, 3600, body);
         client.quit();
@@ -54,6 +55,7 @@ const movie = async (req, res, next) => {
           status: 400,
           message: "Film tidak ditemukan",
         });
+        client.quit();
       }
     });
   }
@@ -100,7 +102,8 @@ const detail = async (req, res) => {
             status: 200,
             message: "movie tidak ditemukan",
           });
-          return;
+        client.quit();
+        return;
         }
         client.setEx(id, 3600, body);
         client.quit();
@@ -110,6 +113,7 @@ const detail = async (req, res) => {
           status: 400,
           message: "Film tidak ditemukan",
         });
+        client.quit();
       }
     });
   }
