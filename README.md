@@ -1,3 +1,14 @@
 # imdb-trawlbens
 INSTALL DEPENDENCIES:
-	npm i express nodemon request redis swagger-ui-express
+	- express
+	- nodemon
+	- request
+	- redis
+	- swagger-ui-express
+
+install redis-cli and run redis-server
+
+npm run server
+
+swagger = http://localhost:9000/api-docs/
+
